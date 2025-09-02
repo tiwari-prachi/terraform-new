@@ -41,7 +41,7 @@ jobs:
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
-        run: terraform apply -auto-approve -input=false -var-file="dev.tfvars"
+        run: terraform destroy -auto-approve -input=false -var-file="dev.tfvars"
         env:
           GOOGLE_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
 
