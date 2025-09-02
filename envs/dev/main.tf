@@ -95,13 +95,13 @@ module "gcr" {
   repo_name  = var.repo_name
   depends_on = [module.project_services]
 }
-/*
+
 module "static_ip" {
   source     = "../../modules/static_ip"
   project_id = var.project_id
   static_ips = var.static_ip_names
 }
-*/
+
 module "sql_peering" {
   source = "../../modules/sql_peering"
 
