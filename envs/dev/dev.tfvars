@@ -1,7 +1,7 @@
 ######################################
 # Global Settings
 ######################################
-project_id = "project-beacon-460705"
+project_id = "xenon-chain-393407"
 region     = "asia-south1"
 location   = "asia-south1"
 
@@ -85,7 +85,7 @@ root_password      = "iloveindia@2025"
 enable_private_ip  = true
 enable_public_ip   = false
 deletion_protection = false
-private_network    = "projects/project-beacon-460705/global/networks/drishya-vpc-dev"
+private_network    = "projects/xenon-chain-393407/global/networks/drishya-vpc-dev"
 db_name            = "mydatabase"
 db_user            = "dbuser"
 db_password        = "iloveindia@1947"
