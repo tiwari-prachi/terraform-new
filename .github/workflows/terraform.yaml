@@ -13,6 +13,9 @@ jobs:
     name: 'Terraform'
     runs-on: ubuntu-latest
 
+    # ✅ Add this line with your environment name
+    environment: production  # 🔁 Change "production" to match your actual environment name
+
     defaults:
       run:
         shell: bash
