@@ -1,7 +1,7 @@
 ######################################
 # Global Settings
 ######################################
-project_id = "project-beacon-460705"
+project_id = "xenon-chain-393407"
 region     = "asia-south1"
 location   = "asia-south1"
 
