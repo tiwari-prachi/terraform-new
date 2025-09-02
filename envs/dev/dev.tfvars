@@ -28,7 +28,7 @@ public_subnet_cidr = "192.168.0.0/21"                    # unchanged, okay
 ######################################
 cluster_name          = "drishya-gke-cluster-dev"
 machine_type          = "e2-medium"
-service_account_email = "xenon-chain-393407@appspot.gserviceaccount.com"
+service_account_email = "993583867388-compute@developer.gserviceaccount.com?uid=111239338393399054276"
 
 # GKE IP Ranges (non-overlapping)
 pods_range          = "gke-pods-range"
