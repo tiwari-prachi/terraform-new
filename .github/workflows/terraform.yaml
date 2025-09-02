@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     # ✅ Add this line with your environment name
-    environment: production  # 🔁 Change "production" to match your actual environment name
+    environment: GCP_SA_KEY  # 🔁 Change "production" to match your actual environment name
 
     defaults:
       run:
