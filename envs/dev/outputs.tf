@@ -65,7 +65,7 @@ output "artifact_registry_repo_url" {
 ######################################
 # 🌐 Static IP Outputs
 ######################################
-/*output "static_ip_addresses" {
+output "static_ip_addresses" {
   description = "The external static IP addresses"
   value       = module.static_ip.static_ip_addresses
 }
@@ -78,7 +78,7 @@ output "static_ip_names" {
 output "static_ip_self_links" {
   description = "Self links of the external static IPs"
   value       = module.static_ip.static_ip_self_links
-}*/
+}
 
 ######################################
 # 🐘 Cloud SQL PostgreSQL Outputs
