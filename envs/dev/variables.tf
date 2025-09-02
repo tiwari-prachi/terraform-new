@@ -120,10 +120,10 @@ variable "ssh_source_ip" {
 ######################################
 # 🎯 Static IP Module
 ######################################
-/*variable "static_ip_names" {
+variable "static_ip_names" {
   description = "List of static IP names to create"
   type        = list(string)
-}*/
+}
 
 ######################################
 # 📦 Artifact Registry Module
