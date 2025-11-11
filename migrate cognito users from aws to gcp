@@ -1,0 +1,42 @@
+Adding Usersfor :
+
+
+
+# Variables
+PROJECT_ID=fpt-staging-420610
+SA_NAME=idp-importer
+FILE=/home/vaibhav_wanare/gcp_identity_platform_import_array.json
+
+# Ensure the SA has both roles
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+  --member="serviceAccount:${SA_NAME}@${PROJECT_ID}.iam.gserviceaccount.com" \
+  --role="roles/identitytoolkit.admin"
+
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+  --member="serviceAccount:${SA_NAME}@${PROJECT_ID}.iam.gserviceaccount.com" \
+  --role="roles/serviceusage.serviceUsageConsumer"     # <-- fixes USER_PROJECT_DENIED
+
+# Use the SA key as ADC
+export GOOGLE_APPLICATION_CREDENTIALS=$PWD/key.json
+
+# Get an access token from the SA
+ACCESS_TOKEN=$(gcloud auth application-default print-access-token)
+
+
+curl -sS -X POST \
+  -H "Authorization: Bearer $ACCESS_TOKEN" \
+  -H "Content-Type: application/json" \
+  "https://identitytoolkit.googleapis.com/v1/projects/${PROJECT_ID}/accounts:batchCreate" \
+  --data-binary @"$FILE" | jq .
+
+TO verify:
+
+PROJECT_ID=fpt-staging-420610
+ACCESS_TOKEN=$(gcloud auth application-default print-access-token)
+
+curl -s -H "Authorization: Bearer $ACCESS_TOKEN" \
+  "https://identitytoolkit.googleapis.com/v1/projects/${PROJECT_ID}/accounts:batchGet?maxResults=1000" \
+| jq '[.users[]?] | length'
+671
+root@cs-419233453749-default:/home/vaibhav_wanare# 
+
